@@ -4,10 +4,9 @@ from typing import List
 import pytorch_lightning as pl
 import torch
 import torch.jit as jit
+import wandb
 from torch import Tensor, nn, optim
 from torch.nn import Parameter
-
-import wandb
 
 
 class TextDateModule(pl.LightningDataModule):
