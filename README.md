@@ -1,4 +1,4 @@
-# Language Modeling using Tensor Train
+# Language Modeling using Tensor Trains
 ---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
