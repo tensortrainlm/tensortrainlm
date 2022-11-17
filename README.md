@@ -77,7 +77,7 @@ To view the result, run the commend `tensorboard --logdir ./lightning_logs/` in
 
 ## Wandb Result
 
-- WikiTest-2 
+- WikiText-2 
 
 ![images/wiki.png](images/wiki.png)
 
