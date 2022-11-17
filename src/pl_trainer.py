@@ -38,6 +38,10 @@ if __name__ == "__main__":
 
     word_freqs = p.word_freqs
 
+    print(len(word_freqs))
+
+    exit()
+
     # 30 time steps.
     train = Vocab(word_freqs, train_corpus, 31)
     valid = Vocab(word_freqs, valid_corpus, 31)
@@ -74,7 +78,10 @@ if __name__ == "__main__":
         "./lightning_logs/", name=f"{args.cell}_{args.data_name}"
     )
     wandb_logger = WandbLogger(
-        project=args.project_name, name=f"{args.cell}_{args.data_name}",config = args,
+        project=args.project_name,
+        name=f"{args.cell}_{args.data_name}",
+        config=args,
+        anonymous=True,
     )
     # Define your gpu here
 
@@ -87,9 +94,9 @@ if __name__ == "__main__":
     )
     trainer = pl.Trainer(
         logger=wandb_logger,
-        max_epochs=50,
+        max_epochs=1,
         gpus=1,
-        # limit_train_batches=10,
+        limit_train_batches=10,
         callbacks=checkpoint_callback,
         # resume_from_checkpoint="output/RNN/sample-epoch=30-loss_valid=4.72.ckpt",
         gradient_clip_val=args.clip,

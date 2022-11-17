@@ -18,15 +18,13 @@ Hyper-parameters are:
 |      batch size     |           20          |
 |   sequence length   |           30          |
 |   number of layers  |           1           |
-|    embedding size   |          100          |
-|     hidden size     |          100          |
+|    embedding size   |          400          |
+|     hidden size     |          20          |
 
 ## Dataset
 
 The data used are word-level language modeling dataset [wikitext2](https://www.salesforce.com/products/einstein/ai-research/the-wikitext-dependency-language-modeling-dataset/) and [ptb](https://data.deepai.org/ptbdataset.zip)
-as presented in `./data` directory. The data files in the directory are preprocessed,
-low frequency words replaced with `<unk>`, the sentences are tokenized.
-
+as presented in `./data` directory.
 ## Structure of the Project
 
 The structure of the project a]is as follows:
@@ -47,7 +45,8 @@ The structure of the project a]is as follows:
     ├── data_module.py
     ├── data_prep.py
     ├── lighting_model_rnn.py
-    ├── lighting_model_tnesor.py
+    ├── lighting_model_tensor.py
+    ├── lighting_model_ttlmraw.py
     ├── lm_config.py
     └── pl_trainer.py
 ```
@@ -76,7 +75,15 @@ To view the result, run the commend `tensorboard --logdir ./lightning_logs/` in
 `./src`
 - wandb
 
+## Wandb Result
 
+- WikiTest-2 
+
+![images/wiki.png](images/wiki.png)
+
+- ptb
+
+![images/ptb.png](images/ptb.png)
 
 
 ## License

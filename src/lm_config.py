@@ -84,7 +84,7 @@ parser.add_argument(
 )
 parser.add_argument(
     "--project_name",
-    default="ICLR-word-lm-rank-analysis",
+    default="anonymous",
     help="project name",
 )
 
